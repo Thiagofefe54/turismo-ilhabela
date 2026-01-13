@@ -1,0 +1,132 @@
+/* --- 1. RESET E BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #09090b; /* Fundo Preto */
+  color: #e4e4e7; /* Texto Claro */
+  overflow-x: hidden;
+}
+
+/* --- 2. SCROLLBAR CUSTOMIZADA --- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #09090b; }
+::-webkit-scrollbar-thumb { 
+  background: #27272a; border-radius: 5px; border: 1px solid #09090b; 
+}
+::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+
+/* Container Geral */
+.container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+
+/* --- 3. HERO SECTION (Banner) --- */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+              url('../assets/img/sla.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.subtitle {
+  color: #fbbf24; font-weight: 700; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;
+}
+
+h1 {
+  font-size: 5rem; font-weight: 900; color: white; margin-bottom: 40px; text-transform: uppercase; text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.btn-cta {
+  padding: 15px 50px; background: transparent; border: 2px solid #fbbf24; color: #fbbf24; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: all 0.3s ease; letter-spacing: 1px;
+}
+
+.btn-cta:hover {
+  background: #fbbf24; color: #000; box-shadow: 0 0 25px rgba(251, 191, 36, 0.6); transform: translateY(-3px);
+}
+
+/* --- 4. INTRODUÇÃO --- */
+.intro-content { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+
+.text-side h2 { font-size: 3rem; color: #fbbf24; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+.text-side p { font-size: 1.1rem; color: #a1a1aa; line-height: 1.8; }
+
+.premium-frame {
+  background-color: #18181b; padding: 15px; border: 2px solid #fbbf24; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border-radius: 4px; max-width: 600px;
+}
+
+.img-container { overflow: hidden; border-bottom: 2px solid #fbbf24; }
+.img-container img { width: 100%; display: block; transition: transform 0.8s ease; filter: grayscale(20%); }
+.premium-frame:hover img { transform: scale(1.05); filter: grayscale(0%); }
+
+figcaption {
+  padding: 20px 10px 5px 10px; color: #a1a1aa; font-size: 0.9rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center;
+}
+figcaption span { color: #fbbf24; margin-right: 10px; font-weight: 900; }
+
+@media (min-width: 768px) {
+  .intro-content { flex-direction: row; align-items: center; text-align: left; }
+  .text-side { flex: 1; padding-right: 50px; }
+  .image-side { flex: 1; }
+  .text-side h2 { font-size: 4rem; }
+}
+
+/* --- 5. DESTAQUES E CARDS --- */
+.section-title {
+  font-size: 2rem; margin-bottom: 20px; color: #fff; border-left: 5px solid #fbbf24; padding-left: 20px; display: inline-block;
+}
+
+.section-description {
+  color: #a1a1aa; max-width: 700px; margin-bottom: 60px; font-size: 1.1rem; line-height: 1.5;
+}
+
+.grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+
+.card {
+  background: #18181b; border-radius: 12px; overflow: hidden; border: 1px solid #27272a; transition: all 0.4s ease; display: flex; flex-direction: column;
+}
+.card:hover { transform: translateY(-10px); border-color: #fbbf24; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+.card-image img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease; }
+.card:hover .card-image img { transform: scale(1.1); }
+
+.card-info { padding: 25px; flex: 1; display: flex; flex-direction: column; }
+.card-info h3 { color: #fff; margin-bottom: 10px; font-size: 1.5rem; }
+.card-info p { color: #a1a1aa; font-size: 0.95rem; margin-bottom: 15px; }
+
+/* Link Saiba Mais */
+.link-more {
+  margin-top: auto; display: inline-block; color: #fbbf24; text-decoration: none; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+}
+.link-more:hover { color: #fff; transform: translateX(5px); }
+
+/* --- 6. MODAL (POP-UP) --- */
+.modal-overlay {
+  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 1000; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;
+}
+.modal-overlay.open { display: flex; opacity: 1; }
+
+.modal-content {
+  background-color: #18181b; padding: 30px; border-radius: 12px; border: 2px solid #fbbf24; max-width: 500px; width: 90%; text-align: center; position: relative; transform: translateY(20px); transition: transform 0.3s ease;
+}
+.modal-overlay.open .modal-content { transform: translateY(0); }
+
+.modal-content img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333; }
+.modal-content h3 { color: #fbbf24; font-size: 1.8rem; margin-bottom: 15px; }
+.modal-content p { color: #e4e4e7; font-size: 1rem; line-height: 1.6; }
+
+.close-btn { position: absolute; top: 10px; right: 15px; font-size: 30px; color: #fbbf24; cursor: pointer; }
+.close-btn:hover { color: #fff; }
+
+/* --- 7. FOOTER & ANIMATION --- */
+footer { text-align: center; padding: 50px; background: #000; color: #52525b; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; border-top: 1px solid #18181b; margin-top: 50px; }
+
+.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
