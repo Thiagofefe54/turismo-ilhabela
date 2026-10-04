@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') modal.classList.remove('open');
+    });
+
     // Fechar ao clicar no X
     closeBtn.addEventListener('click', () => {
         modal.classList.remove('open');

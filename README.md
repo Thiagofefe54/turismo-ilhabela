@@ -1,16 +1,31 @@
-# Desafio Rocketseat - Turismo Ilhabela 🏝️
+# Ilhabela Experience
 
-Projeto desenvolvido como parte do desafio do módulo de HTML e CSS.
+Página turística desenvolvida como desafio de HTML e CSS da Rocketseat.
 
-## 🚀 Tecnologias
-- HTML5 Semântico
-- CSS3 (Layout Responsivo, Dark Mode, Animations)
-- **JavaScript (Extra)**: Adicionei interatividade com Modal e Scroll Reveal para ir além do desafio proposto.
+![Status](https://img.shields.io/badge/status-Projeto%20de%20estudo%20%E2%80%94%20em%20evolu%C3%A7%C3%A3o-blue?style=flat-square)
 
-## ✨ Funcionalidades Extras
-Além dos requisitos obrigatórios, implementei:
-- Navegação suave (Smooth Scroll).
-- Efeito de "Fade In" ao rolar a página.
-- Janelas Modais para detalhes das atrações.
+**Tecnologias:** HTML · CSS · JavaScript
 
-Feito com 💜 por Thiago Feijó
+## Sobre
+
+Uma apresentação visual de Ilhabela, com destinos, fotografias e detalhes das atrações. A proposta é praticar estrutura semântica, layout e interatividade.
+
+## O que já existe
+
+- Cards de Castelhanos, Bonete e Vila Histórica.
+- Modal com detalhes das atrações.
+- Animações de entrada e navegação por seções.
+
+## Como visualizar
+
+Clone o repositório e abra `index.html` no navegador. Para testar por HTTP, use a extensão Live Server do seu editor. Preserve as pastas de CSS, JavaScript e imagens. Não há dependências locais para instalar; recursos de CDN exigem internet.
+
+## Próximos passos
+
+- [ ] Revisar informações turísticas e textos.
+- [ ] Melhorar foco e acessibilidade do modal.
+- [ ] Refinar layout em diferentes dispositivos.
+
+---
+
+Projeto de [Thiago Feijó](https://github.com/Thiagofefe54), mantido como parte do meu aprendizado e portfólio.
